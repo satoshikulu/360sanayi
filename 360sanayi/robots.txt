@@ -1,0 +1,15 @@
+# 360 SANAYİ - Robots.txt
+# www.360sanayi.com
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.360sanayi.com/360sanayi/sitemap.xml
+
+# Crawl-delay (opsiyonel)
+Crawl-delay: 1
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/

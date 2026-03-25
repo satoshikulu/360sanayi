@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>360 SANAYİ – Endüstriyel Çözümler & Robot Boyama</title>
+  <meta name="description" content="Endüstriyel robot kol boyama sistemleri, lazer markalama ve otomasyon çözümleri. Sanayi teknolojilerinde verimlilik ve kalite.">
+  <meta property="og:title" content="360 SANAYİ – Endüstriyel Robot Boyama & Otomasyon">
+  <meta property="og:description" content="Robot kol boyama, lazer markalama ve endüstriyel otomasyon çözümleri.">
+  <meta property="og:type" content="website">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  
+  <!-- Google Fonts - Goldman & Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Goldman:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Preload -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  
+  <!-- Critical CSS Inline -->
+  <style>
+    /* ===== 360 SANAYİ - Critical CSS ===== */
+    :root {
+      --dark: #0a0e1a;
+      --accent: #f97316;
+      --accent2: #3b82f6;
+      --text: #e5e7eb;
+      --text-muted: #9ca3af;
+      --font-primary: 'Goldman', sans-serif;
+      --font-secondary: 'Quicksand', sans-serif;
+    }
+    
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    
+    html { scroll-behavior: smooth; }
+    
+    body {
+      font-family: var(--font-primary);
+      background: var(--dark);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    
+    .font-secondary { font-family: var(--font-secondary); }
+    .description { font-family: var(--font-secondary); font-weight: 300; }
+    .cs-body { font-family: var(--font-secondary); font-weight: 300; }
+    
+    .hero { position: relative; padding-top: 70px; background: var(--dark); min-height: 100vh; }
+    .hero-content { position: relative; z-index: 2; max-width: 800px; width: 100%; padding: 2.5rem 2rem 3.5rem; text-align: center; animation: fadeInUp 0.8s ease 0.2s both; margin-top: 2rem; }
+    .hero-badge { display: inline-block; background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.4); color: var(--accent); font-size: 0.75rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.2rem; }
+    .hero-highlight { background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+    
+    .hero-video-wrap { position: relative; width: 100%; height: 85vh; overflow: hidden; flex-shrink: 0; z-index: 1; }
+    .hero-video-local { width: 100%; height: 100%; object-fit: contain; object-position: center; display: block; }
+    
+    .btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.75rem 1.5rem; border-radius: 8px; font-weight: 600; text-decoration: none; transition: all 0.3s ease; cursor: pointer; border: none; font-family: var(--font-primary); }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-primary:hover { background: #ea580c; transform: translateY(-2px); }
+    
+    @keyframes fadeInUp { 0% { transform: translateY(20px); opacity: 0; } 100% { transform: translateY(0); opacity: 1; } }
+    .fade-in { opacity: 0; animation: fadeIn 0.8s ease-in-out forwards; }
+  </style>
+  
+  <link rel="stylesheet" href="assets/style.css" media="print" onload="this.media='all'">
+  
+  <!-- Optimized JavaScript -->
+  <script defer src="assets/main.js"></script>
+<div id="splash">
+  <div class="splash-logo-video">
+    <div class="video-loading">
+      <div class="spinner"></div>
+      <p>Logo yükleniyor...</p>
+    </div>
+    <video autoplay muted playsinline id="splash-video" aria-label="360 SANAYİ Logo Animasyonu">
+      <source src="assets/logo-animation.mp4" type="video/mp4">
+      <div class="splash-logo-fallback">360<span>SANAYİ</span></div>
+    </video>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header>
+  <a href="index.html" class="logo">360<span>SANAYİ</span></a>
+  <nav>
+    <ul>
+      <li><a href="index.html">Ana Sayfa</a></li>
+      <li><a href="#robot-boyama">Robot Boyama</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
+      <li><a href="hizmetler.html">Hizmetler</a></li>
+      <li><a href="projeler.html">Projeler</a></li>
+      <li><a href="iletisim.html" class="nav-cta">İletişim</a></li>
+    </ul>
+  </nav>
+  <div class="hamburger" aria-label="Menü">
+    <span></span><span></span><span></span>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav">
+  <ul>
+    <li><a href="index.html">Ana Sayfa</a></li>
+    <li><a href="#robot-boyama">Robot Boyama</a></li>
+    <li><a href="hakkimizda.html">Hakkımızda</a></li>
+    <li><a href="hizmetler.html">Hizmetler</a></li>
+    <li><a href="projeler.html">Projeler</a></li>
+    <li><a href="iletisim.html">İletişim</a></li>
+  </ul>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+
+  <!-- Video — üstte kompakt, tam ekran değil -->
+  <div class="hero-video-wrap">
+    <div class="video-loading">
+      <div class="spinner"></div>
+      <p>Video yükleniyor...</p>
+    </div>
+    <video class="hero-video-local" autoplay muted loop playsinline aria-hidden="true" poster="assets/video-poster.jpg">
+      <source src="assets/videoshowcase.mp4" type="video/mp4">
+      <p class="video-error">Tarayıcınız video etiketini desteklemiyor.</p>
+    </video>
+    <div class="hero-video-fade"></div>
+  </div>
+
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- İçerik aşağıda, koyu arka planla net görünür -->
+  <div class="hero-content">
+    <div class="hero-badge font-secondary"><i class="fas fa-robot"></i> &nbsp; Robot Kol Boyama & Endüstriyel Otomasyon</div>
+    <h1>Geleceğin Fabrikası<br><span class="hero-highlight">Bugün Burada</span></h1>
+    <p class="description">Robot kol boyama sistemleri, lazer markalama ve endüstriyel otomasyon çözümleriyle üretimi dönüştürüyoruz</p>
+    <div class="hero-author font-secondary"><i class="fas fa-user-tie"></i> &nbsp; Mehmet Ali Altundal</div>
+    <div class="hero-actions">
+      <a href="#robot-boyama" class="btn btn-primary"><i class="fas fa-robot"></i> Robot Sistemleri</a>
+      <a href="#video-showcase" class="btn btn-video"><i class="fas fa-play-circle"></i> Videoları İzle</a>
+      <a href="iletisim.html" class="btn btn-outline"><i class="fas fa-phone"></i> İletişime Geç</a>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-dot"></div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div>
+        <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+        <div class="stat-label">Tamamlanan Proje</div>
+      </div>
+      <div>
+        <div class="stat-number" data-target="15" data-suffix="+">0+</div>
+        <div class="stat-label">Yıllık Deneyim</div>
+      </div>
+      <div>
+        <div class="stat-number" data-target="200" data-suffix="+">0+</div>
+        <div class="stat-label">Mutlu Müşteri</div>
+      </div>
+      <div>
+        <div class="stat-number" data-target="30" data-suffix="+">0+</div>
+        <div class="stat-label">Sektör Çözümü</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ROBOT BOYAMA SECTION -->
+<section id="robot-boyama" class="robot-section">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label"><i class="fas fa-robot"></i> &nbsp; Robotik Sistemler</div>
+      <h2 class="section-title">Endüstriyel Robot Kol Boyama</h2>
+      <p class="section-desc description" style="margin:0 auto;">6 eksenli robot kollarla hassas, tekrarlanabilir ve yüksek kaliteli boyama. İnsan hatasını sıfıra indirin.</p>
+    </div>
+
+    <div class="robot-features-grid">
+      <div class="robot-feature-card fade-in">
+        <div class="robot-feature-icon"><i class="fas fa-drafting-compass"></i></div>
+        <h3>6 Eksenli Hassasiyet</h3>
+        <p class="description">360° hareket kabiliyetiyle her açıdan mükemmel kaplama. ±0.05mm tekrarlama hassasiyeti.</p>
+        <div class="robot-stat">±0.05mm</div>
+      </div>
+      <div class="robot-feature-card fade-in">
+        <div class="robot-feature-icon"><i class="fas fa-tachometer-alt"></i></div>
+        <h3>Yüksek Hız & Verim</h3>
+        <p class="description">Manuel boyamaya kıyasla %300 daha hızlı üretim. Kesintisiz 24/7 çalışma kapasitesi.</p>
+        <div class="robot-stat">3x Hız</div>
+      </div>
+      <div class="robot-feature-card fade-in">
+        <div class="robot-feature-icon"><i class="fas fa-leaf"></i></div>
+        <h3>Boya Tasarrufu</h3>
+        <p class="description">Atomizasyon teknolojisiyle %30'a kadar boya tasarrufu. Çevre dostu ve ekonomik.</p>
+        <div class="robot-stat">%30 Tasarruf</div>
+      </div>
+      <div class="robot-feature-card fade-in">
+        <div class="robot-feature-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Güvenli Ortam</h3>
+        <p class="description">Tehlikeli kimyasal ortamlardan çalışanları korur. ATEX sertifikalı patlama korumalı modeller.</p>
+        <div class="robot-stat">ATEX</div>
+      </div>
+    </div>
+
+    <!-- Interactive Robot Arm Diagram -->
+    <div class="robot-diagram-wrap fade-in">
+      <div class="robot-diagram">
+        <div class="robot-arm-visual">
+          <svg viewBox="0 0 400 350" class="robot-svg" aria-label="Robot kol diyagramı">
+            <!-- Base -->
+            <rect x="160" y="300" width="80" height="30" rx="6" fill="#1f2937" stroke="#f97316" stroke-width="2"/>
+            <rect x="175" y="270" width="50" height="35" rx="4" fill="#374151" stroke="#f97316" stroke-width="1.5"/>
+            <!-- Lower arm -->
+            <line x1="200" y1="270" x2="200" y2="180" stroke="#f97316" stroke-width="8" stroke-linecap="round" class="robot-arm-lower"/>
+            <!-- Joint 1 -->
+            <circle cx="200" cy="180" r="14" fill="#1f2937" stroke="#f97316" stroke-width="3" class="robot-joint"/>
+            <!-- Upper arm -->
+            <line x1="200" y1="180" x2="260" y2="110" stroke="#3b82f6" stroke-width="7" stroke-linecap="round" class="robot-arm-upper"/>
+            <!-- Joint 2 -->
+            <circle cx="260" cy="110" r="12" fill="#1f2937" stroke="#3b82f6" stroke-width="3" class="robot-joint"/>
+            <!-- Wrist -->
+            <line x1="260" y1="110" x2="300" y2="80" stroke="#f97316" stroke-width="5" stroke-linecap="round" class="robot-arm-wrist"/>
+            <!-- Spray nozzle -->
+            <circle cx="300" cy="80" r="10" fill="#f97316" class="robot-nozzle"/>
+            <polygon points="300,65 295,50 305,50" fill="#f97316" class="robot-nozzle"/>
+            <!-- Spray particles -->
+            <g class="spray-particles">
+              <circle cx="310" cy="55" r="3" fill="#60a5fa" opacity="0.8"/>
+              <circle cx="320" cy="45" r="2" fill="#60a5fa" opacity="0.6"/>
+              <circle cx="325" cy="60" r="2.5" fill="#93c5fd" opacity="0.7"/>
+              <circle cx="315" cy="40" r="1.5" fill="#bfdbfe" opacity="0.5"/>
+              <circle cx="330" cy="50" r="2" fill="#60a5fa" opacity="0.4"/>
+            </g>
+            <!-- Labels -->
+            <text x="130" y="290" fill="#9ca3af" font-size="11" font-family="Inter">Taban</text>
+            <text x="155" y="175" fill="#9ca3af" font-size="11" font-family="Inter">Eklem 1</text>
+            <text x="265" y="105" fill="#9ca3af" font-size="11" font-family="Inter">Eklem 2</text>
+            <text x="305" y="78" fill="#f97316" font-size="11" font-family="Inter" font-weight="bold">Nozul</text>
+          </svg>
+        </div>
+        <div class="robot-diagram-info">
+          <h3>Robot Kol Bileşenleri</h3>
+          <div class="robot-spec-list">
+            <div class="robot-spec"><span class="spec-dot orange"></span><strong>Eksen Sayısı:</strong> 6 Eksen</div>
+            <div class="robot-spec"><span class="spec-dot blue"></span><strong>Erişim Mesafesi:</strong> 1.4m – 3.2m</div>
+            <div class="robot-spec"><span class="spec-dot orange"></span><strong>Taşıma Kapasitesi:</strong> 5kg – 20kg</div>
+            <div class="robot-spec"><span class="spec-dot blue"></span><strong>Tekrarlama Hassasiyeti:</strong> ±0.05mm</div>
+            <div class="robot-spec"><span class="spec-dot orange"></span><strong>Boya Sistemi:</strong> Elektrostatik / HVLP</div>
+            <div class="robot-spec"><span class="spec-dot blue"></span><strong>Programlama:</strong> Teach Pendant / Offline</div>
+            <div class="robot-spec"><span class="spec-dot orange"></span><strong>Sertifika:</strong> CE, ATEX, ISO 9001</div>
+          </div>
+          <a href="iletisim.html" class="btn btn-primary" style="margin-top:1.5rem;display:inline-flex;">
+            <i class="fas fa-file-alt"></i> Teklif Al
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CİNEMATİK SHOWCASE -->
+<section id="video-showcase" class="cinematic-showcase">
+
+  <div class="cs-bg-layer">
+    <div class="cs-bg cs-bg--1"></div>
+    <div class="cs-bg cs-bg--2"></div>
+    <div class="cs-bg cs-bg--3"></div>
+    <div class="cs-bg cs-bg--4"></div>
+    <div class="cs-bg cs-bg--5"></div>
+    <div class="cs-bg cs-bg--6"></div>
+    <div class="cs-bg cs-bg--7"></div>
+    <div class="cs-overlay"></div>
+    <div class="cs-scanlines"></div>
+  </div>
+
+  <div class="cs-stage" id="cs-stage">
+
+    <div class="cs-scene" data-scene="0">
+      <div class="cs-scene-inner">
+        <div class="cs-tag">Vizyon</div>
+        <p class="cs-body description">Geleceğin üretim dünyasında, hız, hassasiyet ve sürdürülebilirlik artık bir seçenek değil…</p>
+        <h2 class="cs-headline">Bir <span>Zorunluluk.</span></h2>
+      </div>
+    </div>
+
+    <div class="cs-scene" data-scene="1">
+      <div class="cs-scene-inner">
+        <div class="cs-tag"><i class="fas fa-robot"></i> &nbsp; Robot Teknolojisi</div>
+        <p class="cs-body description">Endüstriyel robot teknolojileriyle, üretim süreçlerini yeniden tanımlıyoruz.</p>
+        <h2 class="cs-headline">Mikron Hassasiyet.<br><span>Maksimum Verimlilik.</span></h2>
+      </div>
+    </div>
+
+    <div class="cs-scene" data-scene="2">
+      <div class="cs-scene-inner">
+        <div class="cs-tag"><i class="fas fa-spray-can"></i> &nbsp; Robotik Boyama</div>
+        <p class="cs-body description">Gelişmiş robotik boyama çözümlerimizle; homojen kaplama, minimum fire ve maksimum kaliteyi standart hale getiriyoruz.</p>
+        <h2 class="cs-headline">Sıfır Hata.<br><span>Sonsuz Kalite.</span></h2>
+      </div>
+    </div>
+
+    <div class="cs-scene" data-scene="3">
+      <div class="cs-scene-inner">
+        <div class="cs-tag"><i class="fas fa-flask"></i> &nbsp; Ar-Ge</div>
+        <p class="cs-body description">Her proje, güçlü bir mühendislik altyapısı ve sürekli gelişen Ar-Ge yaklaşımıyla hayat bulur.</p>
+        <h2 class="cs-headline">Sadece Sistem Değil…<br><span>Geleceği Tasarlıyoruz.</span></h2>
+      </div>
+    </div>
+
+    <div class="cs-scene" data-scene="4">
+      <div class="cs-scene-inner">
+        <div class="cs-tag"><i class="fas fa-cogs"></i> &nbsp; Otomasyon</div>
+        <p class="cs-body description">Otomasyon, mekatronik ve proses mühendisliğini bir araya getirerek işletmelerin rekabet gücünü artırıyoruz.</p>
+        <h2 class="cs-headline">Üretimi<br><span>Dönüştürüyoruz.</span></h2>
+      </div>
+    </div>
+
+    <div class="cs-scene" data-scene="5">
+      <div class="cs-scene-inner">
+        <div class="cs-tag"><i class="fas fa-globe"></i> &nbsp; Global Vizyon</div>
+        <p class="cs-body description">Uluslararası tecrübemiz ve çok sektörlü uzmanlığımızla, endüstrinin her alanına değer katıyoruz.</p>
+        <h2 class="cs-headline">Her Sektörde.<br><span>Her Ölçekte.</span></h2>
+      </div>
+    </div>
+
+    <div class="cs-scene cs-scene--finale" data-scene="6">
+      <div class="cs-scene-inner">
+        <div class="cs-logo-big">360<span>SANAYİ</span></div>
+        <div class="cs-slogan-line"><span class="cs-slogan-part">Teknolojiyi üretime dönüştüren akıl.</span></div>
+        <div class="cs-slogan-line cs-slogan-line--2"><span class="cs-slogan-part">Verimliliği geleceğe taşıyan güç.</span></div>
+        <div class="cs-finale-actions">
+          <a href="iletisim.html" class="btn btn-primary"><i class="fas fa-phone"></i> Bizimle Çalışın</a>
+          <a href="#robot-boyama" class="btn btn-outline"><i class="fas fa-robot"></i> Sistemleri Keşfet</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="cs-controls">
+    <button class="cs-btn-prev" id="cs-prev" aria-label="Önceki sahne"><i class="fas fa-chevron-left"></i></button>
+    <div class="cs-dots" id="cs-dots">
+      <button class="cs-dot" data-index="0" aria-label="Sahne 1"></button>
+      <button class="cs-dot" data-index="1" aria-label="Sahne 2"></button>
+      <button class="cs-dot" data-index="2" aria-label="Sahne 3"></button>
+      <button class="cs-dot" data-index="3" aria-label="Sahne 4"></button>
+      <button class="cs-dot" data-index="4" aria-label="Sahne 5"></button>
+      <button class="cs-dot" data-index="5" aria-label="Sahne 6"></button>
+      <button class="cs-dot" data-index="6" aria-label="Kapanış"></button>
+    </div>
+    <button class="cs-btn-next" id="cs-next" aria-label="Sonraki sahne"><i class="fas fa-chevron-right"></i></button>
+  </div>
+
+  <div class="cs-progress-bar"><div class="cs-progress-fill" id="cs-progress"></div></div>
+  <button class="cs-playpause" id="cs-playpause" aria-label="Duraklat"><i class="fas fa-pause"></i></button>
+  <div class="cs-counter"><span id="cs-current">01</span> / <span>07</span></div>
+
+</section>
+
+<!-- VIDEO MODAL -->
+<div id="video-modal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video oynatıcı">
+  <div class="video-modal-backdrop" onclick="closeVideoModal()"></div>
+  <div class="video-modal-content">
+    <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Kapat"><i class="fas fa-times"></i></button>
+    <iframe id="modal-video-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
+  </div>
+</div>
+<section id="hizmetler">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Hizmetlerimiz</div>
+      <h2 class="section-title">Sektöre Özel Endüstriyel Çözümler</h2>
+      <p class="section-desc">Robot kol boyama, lazer markalama, inkjet kodlama ve endüstriyel otomasyon alanlarında kapsamlı çözümler sunuyoruz.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in service-card--featured">
+        <div class="service-icon"><i class="fas fa-robot"></i></div>
+        <div class="service-badge-new">YENİ</div>
+        <h3>Robot Kol Boyama</h3>
+        <p>6 eksenli endüstriyel robot kollarla otomotiv, metal ve plastik yüzeylerde hassas, tekrarlanabilir boyama sistemleri.</p>
+        <a href="#robot-boyama" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-spray-can"></i></div>
+        <h3>Elektrostatik Boyama</h3>
+        <p>Elektrostatik yük teknolojisiyle %95 boya transferi verimliliği. Minimum atık, maksimum kaplama kalitesi.</p>
+        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-crosshairs"></i></div>
+        <h3>Lazer Markalama</h3>
+        <p>Metal, plastik ve çeşitli yüzeylerde kalıcı, yüksek hassasiyetli lazer markalama sistemleri.</p>
+        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-print"></i></div>
+        <h3>İnkjet Kodlama</h3>
+        <p>Gıda, ambalaj ve üretim hatlarında hızlı ve güvenilir inkjet tarih/seri kodlama çözümleri.</p>
+        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-industry"></i></div>
+        <h3>Endüstriyel Otomasyon</h3>
+        <p>Üretim hatlarına entegre otomasyon sistemleri ile verimlilik ve kalite artışı.</p>
+        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-tools"></i></div>
+        <h3>Teknik Destek</h3>
+        <p>Kurulum, bakım ve teknik destek hizmetleri ile kesintisiz üretim süreci.</p>
+        <a href="iletisim.html" class="service-link">İletişim <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="projects-section" id="projeler">
+  <div class="container">
+    <div class="fade-in">
+      <div class="section-label">Referans Projeler</div>
+      <h2 class="section-title">Sektörden Başarı Hikayeleri</h2>
+      <p class="section-desc">Farklı sektörlerde gerçekleştirdiğimiz markalama ve kodlama projelerinden örnekler.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="project-card fade-in">
+        <div class="project-thumb"><i class="fas fa-utensils"></i></div>
+        <div class="project-info">
+          <div class="project-tag">Gıda Sektörü</div>
+          <h3>Yufka & Paket Gıda Tarih Markalama</h3>
+          <p>Yüksek hızlı üretim hatlarında inkjet tarih ve seri numarası kodlama.</p>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-thumb"><i class="fas fa-car"></i></div>
+        <div class="project-info">
+          <div class="project-tag">Otomotiv</div>
+          <h3>Otomotiv Filtre Lazer Markalama</h3>
+          <p>Metal filtre parçalarında kalıcı lazer markalama ve seri numaralandırma.</p>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-thumb"><i class="fas fa-pipe"></i></div>
+        <div class="project-info">
+          <div class="project-tag">İnşaat & Plastik</div>
+          <h3>Plastik Boru Lazer Markalama</h3>
+          <p>Su ve altyapı borularında sürekli lazer markalama sistemleri.</p>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-thumb"><i class="fas fa-hammer"></i></div>
+        <div class="project-info">
+          <div class="project-tag">El Aletleri</div>
+          <h3>Metal El Aleti Markalama</h3>
+          <p>Kesici ve el aletlerinde marka, logo ve seri numarası lazer markalama.</p>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-thumb"><i class="fas fa-tint"></i></div>
+        <div class="project-info">
+          <div class="project-tag">Beyaz Eşya</div>
+          <h3>Beyaz Eşya Yazı Markalama</h3>
+          <p>Ev aletleri ve beyaz eşya yüzeylerinde hassas lazer yazı markalama.</p>
+        </div>
+      </div>
+      <div class="project-card fade-in">
+        <div class="project-thumb"><i class="fas fa-truck"></i></div>
+        <div class="project-info">
+          <div class="project-tag">Taşımacılık</div>
+          <h3>Trailer & Karoser Markalama</h3>
+          <p>Büyük metal yüzeylerde mobil nokta vuruşlu lazer markalama.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="hakkimizda">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-visual fade-in">
+        <div class="about-icon">⚙️</div>
+        <h3>Mehmet Ali Altundal</h3>
+        <p>360 SANAYİ Genel Müdürü<br>Endüstriyel Teknoloji Uzmanı</p>
+        <br>
+        <p style="color:var(--text-muted);font-size:0.9rem;">15 yılı aşkın sektör deneyimiyle endüstriyel markalama ve kodlama çözümlerinde güvenilir çözüm ortağınız.</p>
+      </div>
+      <div class="fade-in">
+        <div class="section-label">Hakkımızda</div>
+        <h2 class="section-title">Neden 360 SANAYİ?</h2>
+        <p class="section-desc" style="margin-bottom:1.5rem;">Endüstriyel markalama ve kodlama teknolojilerinde yılların verdiği deneyimle sektörün güvenilir çözüm ortağıyız.</p>
+        <div class="about-features">
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-check-circle"></i></div>
+            <div>
+              <h4>Yüksek Kalite Standartları</h4>
+              <p>ISO uyumlu süreçler ve kalite kontrol sistemleriyle üstün ürün kalitesi.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+            <div>
+              <h4>Hızlı Teslimat & Kurulum</h4>
+              <p>Proje bazlı hızlı teslimat ve profesyonel kurulum hizmetleri.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-headset"></i></div>
+            <div>
+              <h4>7/24 Teknik Destek</h4>
+              <p>Satış sonrası kesintisiz teknik destek ve bakım hizmetleri.</p>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-icon"><i class="fas fa-globe"></i></div>
+            <div>
+              <h4>Geniş Distribütörlük Ağı</h4>
+              <p>Türkiye ve çevre ülkelerde güçlü distribütörlük ve satış ağı.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT PREVIEW -->
+<section class="contact-section" id="iletisim">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:1rem;">
+      <div class="section-label">İletişim</div>
+      <h2 class="section-title">Bizimle İletişime Geçin</h2>
+      <p class="section-desc" style="margin:0 auto;">Projeleriniz için teklif almak veya bilgi edinmek için hemen ulaşın.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card fade-in">
+        <h3><i class="fas fa-address-card" style="color:var(--accent);margin-right:0.5rem;"></i> İletişim Bilgileri</h3>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-user-tie"></i></div>
+          <div>
+            <div class="contact-item-label">Yetkili</div>
+            <div class="contact-item-value">Mehmet Ali Altundal</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+          <div>
+            <div class="contact-item-label">Telefon</div>
+            <div class="contact-item-value"><a href="tel:+905557038888">0555 703 88 88</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fas fa-building"></i></div>
+          <div>
+            <div class="contact-item-label">Firma</div>
+            <div class="contact-item-value">360 SANAYİ</div>
+          </div>
+        </div>
+        <a href="tel:+905557038888" class="phone-btn"><i class="fas fa-phone"></i> Hemen Ara: 0555 703 88 88</a>
+        <a href="https://wa.me/905557038888" target="_blank" rel="noopener" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp ile Yaz</a>
+      </div>
+      <div class="contact-card fade-in">
+        <h3><i class="fas fa-map-marker-alt" style="color:var(--accent);margin-right:0.5rem;"></i> Çalışma Alanlarımız</h3>
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:0.5rem;">
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-industry"></i></div><div><h4>Metal & Makine Sektörü</h4><p>Lazer ve nokta vuruşlu markalama</p></div></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-box"></i></div><div><h4>Ambalaj & Gıda</h4><p>İnkjet tarih ve seri kodlama</p></div></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-car-side"></i></div><div><h4>Otomotiv & Savunma</h4><p>Kalıcı parça markalama</p></div></div>
+          <div class="feature-item"><div class="feature-icon"><i class="fas fa-home"></i></div><div><h4>İnşaat & Plastik</h4><p>Boru ve profil markalama</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">360<span>SANAYİ</span></div>
+        <p>Endüstriyel markalama ve kodlama teknolojilerinde güvenilir çözüm ortağınız. Sanayi teknolojilerinde verimlilik ve kaliteyi bir araya getiriyoruz.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Hızlı Erişim</h4>
+        <ul>
+          <li><a href="index.html">Ana Sayfa</a></li>
+          <li><a href="hakkimizda.html">Hakkımızda</a></li>
+          <li><a href="hizmetler.html">Hizmetler</a></li>
+          <li><a href="projeler.html">Projeler</a></li>
+          <li><a href="iletisim.html">İletişim</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <ul>
+          <li><a href="tel:+905557038888"><i class="fas fa-phone" style="margin-right:0.4rem;color:var(--accent);"></i>0555 703 88 88</a></li>
+          <li><a href="https://wa.me/905557038888" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:0.4rem;color:#25d366;"></i>WhatsApp</a></li>
+          <li style="color:var(--text-muted);font-size:0.85rem;padding-top:0.25rem;">Mehmet Ali Altundal</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 360 SANAYİ. Tüm hakları saklıdır.</p>
+      <p>Mehmet Ali Altundal</p>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>

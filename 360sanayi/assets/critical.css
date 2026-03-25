@@ -1,0 +1,190 @@
+/* ===== 360 SANAYİ - Critical CSS ===== */
+:root {
+  --dark: #0a0e1a;
+  --dark2: #111827;
+  --dark3: #1f2937;
+  --accent: #f97316;
+  --accent2: #3b82f6;
+  --text: #e5e7eb;
+  --text-muted: #9ca3af;
+  --border: rgba(255,255,255,0.08);
+  --card-bg: rgba(255,255,255,0.04);
+  --radius: 12px;
+  --transition: 0.3s ease;
+  
+  /* Font Variables */
+  --font-primary: 'Goldman', sans-serif;
+  --font-secondary: 'Quicksand', sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-primary);
+  background: var(--dark);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Font Classes */
+.font-secondary {
+  font-family: var(--font-secondary);
+}
+
+.subtitle {
+  font-family: var(--font-secondary);
+  font-weight: 400;
+  font-size: 1.1rem;
+  color: var(--text-muted);
+}
+
+.description {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.cs-body {
+  font-family: var(--font-secondary);
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* ===== HERO SECTION ===== */
+.hero {
+  position: relative;
+  padding-top: 70px;
+  background: var(--dark);
+  min-height: 100vh;
+}
+
+.hero-bg { display: none; }
+.hero-overlay { display: none; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  width: 100%;
+  padding: 2.5rem 2rem 3.5rem;
+  text-align: center;
+  animation: fadeInUp 0.8s ease 0.2s both;
+  margin-top: 2rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(249,115,22,0.15);
+  border: 1px solid rgba(249,115,22,0.4);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  margin-bottom: 1.2rem;
+}
+
+.hero-highlight {
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ===== HERO VIDEO ===== */
+.hero-video-wrap {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  overflow: hidden;
+  flex-shrink: 0;
+  z-index: 1;
+}
+.hero-video-local {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+.hero-video-fade {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 80px;
+  background: linear-gradient(to bottom, transparent, var(--dark));
+  pointer-events: none;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: none;
+  font-family: var(--font-primary);
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #ea580c;
+  transform: translateY(-2px);
+}
+
+.btn-video {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.btn-video:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+
+.btn-outline {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-outline:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in-out forwards;
+}
+
+.fade-in:nth-child(1) { animation-delay: 0.1s; }
+.fade-in:nth-child(2) { animation-delay: 0.2s; }
+.fade-in:nth-child(3) { animation-delay: 0.3s; }
+.fade-in:nth-child(4) { animation-delay: 0.4s; }

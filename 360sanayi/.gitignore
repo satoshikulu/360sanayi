@@ -1,0 +1,42 @@
+# HTTrack and cache files
+hts-cache/
+hts-log.txt
+*.cache
+
+# External CDN folders
+maxcdn.bootstrapcdn.com/
+s.bookcdn.com/
+w.bookcdn.com/
+
+# WordPress/HTTrack backup files
+www.360sanayi.com/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Logs
+*.log
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git (already tracked)
+.git/
+
+# Keep only essential files
+!index.html
+!hakkimizda.html
+!hizmetler.html
+!iletisim.html
+!projeler.html
+!assets/
+!backblue.gif
+!fade.gif
