@@ -288,15 +288,16 @@ document.addEventListener('keydown', e => {
 // ===== LAZY LOADING FOR BACKGROUND IMAGES =====
 (function initLazyLoading() {
   // Cinematic showcase background images
-  const bgElements = document.querySelectorAll('[data-bg], [style*="--bg-url"]');
+  const bgElements = document.querySelectorAll('.cs-bg--1, .cs-bg--2, .cs-bg--6');
   
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        let bgUrl = el.getAttribute('data-bg') || getComputedStyle(el).getPropertyValue('--bg-url').trim();
+        const computedStyle = getComputedStyle(el);
+        let bgUrl = computedStyle.getPropertyValue('--bg-url').trim();
         
-        if (bgUrl) {
+        if (bgUrl && !el.style.backgroundImage) {
           // Remove quotes if present
           bgUrl = bgUrl.replace(/^['"]|['"]$/g, '');
           
@@ -304,7 +305,6 @@ document.addEventListener('keydown', e => {
           img.src = bgUrl;
           img.onload = () => {
             el.style.backgroundImage = `url('${bgUrl}')`;
-            el.removeAttribute('data-bg');
           };
           observer.unobserve(el);
         }
