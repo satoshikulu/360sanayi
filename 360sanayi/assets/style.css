@@ -847,12 +847,12 @@ footer {
 .cs-bg.active { opacity: 1; }
 
 /* Sahne görselleri — lazy loading ile */
-.cs-bg--1 { background-image: none; --bg-url: url('https://plus.unsplash.com/premium_photo-1682144741954-3a9dcea81dd2?q=80&w=1920&auto=format&fit=crop'); }
-.cs-bg--2 { background-image: none; --bg-url: url('https://plus.unsplash.com/premium_photo-1682144729399-061e5c50d8df?q=80&w=1920&auto=format&fit=crop'); }
+.cs-bg--1 { background-image: none; --bg-url: 'https://plus.unsplash.com/premium_photo-1682144741954-3a9dcea81dd2?q=80&w=1920&auto=format&fit=crop'; }
+.cs-bg--2 { background-image: none; --bg-url: 'https://plus.unsplash.com/premium_photo-1682144729399-061e5c50d8df?q=80&w=1920&auto=format&fit=crop'; }
 .cs-bg--3 { background-image: url('paint_clients_lesta_robot.png'); }
 .cs-bg--4 { background-image: url('lesta.png'); }
 .cs-bg--5 { background-image: url('lesta4.png'); }
-.cs-bg--6 { background-image: none; --bg-url: url('https://images.unsplash.com/photo-1655393001768-d946c97d6fd1?q=80&w=1920&auto=format&fit=crop'); }
+.cs-bg--6 { background-image: none; --bg-url: 'https://images.unsplash.com/photo-1655393001768-d946c97d6fd1?q=80&w=1920&auto=format&fit=crop'; }
 .cs-bg--7 { background-image: url('lesta7.png'); }
 .cs-overlay {
   position: absolute; inset: 0;

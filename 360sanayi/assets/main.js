@@ -294,16 +294,16 @@ document.addEventListener('keydown', e => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         const el = entry.target;
-        const bgUrl = el.getAttribute('data-bg') || getComputedStyle(el).getPropertyValue('--bg-url').trim();
+        let bgUrl = el.getAttribute('data-bg') || getComputedStyle(el).getPropertyValue('--bg-url').trim();
         
         if (bgUrl) {
-          // Remove quotes from url()
-          const cleanUrl = bgUrl.replace(/url\(['"]?/g, '').replace(/['"]?\)/g, '');
+          // Remove quotes if present
+          bgUrl = bgUrl.replace(/^['"]|['"]$/g, '');
           
           const img = new Image();
-          img.src = cleanUrl;
+          img.src = bgUrl;
           img.onload = () => {
-            el.style.backgroundImage = `url('${cleanUrl}')`;
+            el.style.backgroundImage = `url('${bgUrl}')`;
             el.removeAttribute('data-bg');
           };
           observer.unobserve(el);
