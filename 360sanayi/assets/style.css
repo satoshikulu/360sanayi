@@ -396,9 +396,6 @@ section { padding: 5rem 2rem; }
 }
 .project-card:hover { transform: translateY(-4px); border-color: rgba(59,130,246,0.3); }
 .project-thumb {
-  height: 180px;
-  background-size: cover;
-  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
