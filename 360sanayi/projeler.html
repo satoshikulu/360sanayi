@@ -8,6 +8,55 @@
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <link rel="stylesheet" href="assets/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+    .project-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.3);
+    }
+    .project-thumb {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .project-info {
+      padding: 1.5rem;
+    }
+    .project-tag {
+      display: inline-block;
+      background: #f97316;
+      color: white;
+      padding: 0.25rem 0.75rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .project-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+      color: #e5e7eb;
+    }
+    .project-info p {
+      color: #9ca3af;
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+  </style>
 </head>
 <body>
 
@@ -44,9 +93,7 @@
   <div class="container">
     <div class="projects-grid">
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://plus.unsplash.com/premium_photo-1661425663300-e7663b3be5c2?q=80&w=874&auto=format&fit=crop" alt="Gıda Sektörü" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-utensils" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://plus.unsplash.com/premium_photo-1661425663300-e7663b3be5c2?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Gıda Sektörü</div>
@@ -55,9 +102,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?q=80&w=800&auto=format&fit=crop" alt="Otomotiv" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-car" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1567789884554-0b844b597180?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Otomotiv</div>
@@ -66,9 +111,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="İnşaat & Plastik" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-water" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://plus.unsplash.com/premium_photo-1716396588873-db76b49dfd36?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">İnşaat & Plastik</div>
@@ -77,9 +120,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="El Aletleri" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-hammer" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://plus.unsplash.com/premium_photo-1682144562076-19fa1b95ef4e?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">El Aletleri</div>
@@ -88,9 +129,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=800&auto=format&fit=crop" alt="Beyaz Eşya" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-blender" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1757233297886-f07bd0f626b5?q=80&w=866&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Beyaz Eşya</div>
@@ -99,9 +138,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1601584115197-04ecc0da31bc?q=80&w=800&auto=format&fit=crop" alt="Taşımacılık" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-truck" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1716880288871-c15d8519f5b3?q=80&w=774&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Taşımacılık</div>
@@ -110,9 +147,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1598516087232-b8137b6a3d09?q=80&w=800&auto=format&fit=crop" alt="Yumurta" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-egg" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1739294525162-824c1ac30289?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Gıda Sektörü</div>
@@ -121,9 +156,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1585704032915-c043c25d89cd?q=80&w=800&auto=format&fit=crop" alt="Sıhhi Tesisat" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-faucet" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1454988501794-2992f706932e?q=80&w=874&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Sıhhi Tesisat</div>
@@ -132,9 +165,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1606851096748-bf44ac57aa75?q=80&w=800&auto=format&fit=crop" alt="Ambalaj" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-box" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://images.unsplash.com/photo-1757981989497-fa816e1f1634?q=80&w=435&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Ambalaj</div>
@@ -143,9 +174,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1563291074-2bf8677ac0e5?q=80&w=800&auto=format&fit=crop" alt="Tabela" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-sign" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://plus.unsplash.com/premium_photo-1664302281426-5b51bca512b6?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Tabela & Plaka</div>
@@ -154,9 +183,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1628151015968-3a4429e9ef03?q=80&w=800&auto=format&fit=crop" alt="Kimya" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-flask" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://plus.unsplash.com/premium_photo-1682147450231-c3f2fa7e4d08?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Kimya & Boya</div>
@@ -165,9 +192,7 @@
         </div>
       </div>
       <div class="project-card fade-in">
-        <div class="project-thumb" style="position: relative;">
-          <img src="https://images.unsplash.com/photo-1565456992598-3a8b5a5f8c6e?q=80&w=800&auto=format&fit=crop" alt="Metal Döküm" style="width: 100%; height: 180px; object-fit: cover; position: absolute; top: 0; left: 0;">
-          <i class="fas fa-cog" style="position: relative; z-index: 2;"></i>
+        <div class="project-thumb" style="background-image: url('https://plus.unsplash.com/premium_photo-1661904030980-5661f0961d33?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; height: 180px; position: relative; display: flex; align-items: center; justify-content: center;">
         </div>
         <div class="project-info">
           <div class="project-tag">Metal Döküm</div>
