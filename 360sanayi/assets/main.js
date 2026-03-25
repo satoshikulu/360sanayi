@@ -285,33 +285,5 @@ document.addEventListener('keydown', e => {
   }, 5000);
 })();
 
-// ===== LAZY LOADING FOR BACKGROUND IMAGES =====
-(function initLazyLoading() {
-  // Cinematic showcase background images
-  const bgElements = document.querySelectorAll('.cs-bg--1, .cs-bg--2, .cs-bg--6');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const el = entry.target;
-        const computedStyle = getComputedStyle(el);
-        let bgUrl = computedStyle.getPropertyValue('--bg-url').trim();
-        
-        if (bgUrl && !el.style.backgroundImage) {
-          // Remove quotes if present
-          bgUrl = bgUrl.replace(/^['"]|['"]$/g, '');
-          
-          const img = new Image();
-          img.src = bgUrl;
-          img.onload = () => {
-            el.style.backgroundImage = `url('${bgUrl}')`;
-          };
-          observer.unobserve(el);
-        }
-      }
-    });
-  }, { threshold: 0.1 });
-  
-  bgElements.forEach(el => observer.observe(el));
-})();
+
 
