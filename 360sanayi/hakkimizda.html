@@ -44,7 +44,7 @@
   <div class="container">
     <div class="about-grid fade-in">
       <div class="about-visual">
-        <div class="about-icon">⚙️</div>
+        <div class="about-icon" style="background-image:url('https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=400&auto=format&fit=crop');background-size:cover;background-position:center top;width:140px;height:140px;border-radius:50%;margin:0 auto 1rem;border:3px solid var(--accent);"></div>
         <h3>Mehmet Ali Altundal</h3>
         <p>Genel Müdür & Kurucu<br>Endüstriyel Teknoloji Uzmanı</p>
         <br>
@@ -109,6 +109,50 @@
   </div>
 </div>
 
+<!-- SEKTÖRLER GÖRSEL GRID -->
+<section style="background:var(--dark);padding:4rem 0;">
+  <div class="container">
+    <div class="fade-in" style="text-align:center;margin-bottom:2.5rem;">
+      <div class="section-label">Uzmanlık Alanları</div>
+      <h2 class="section-title">Hizmet Verdiğimiz Sektörler</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;">
+      <div class="fade-in" style="border-radius:12px;overflow:hidden;position:relative;height:200px;cursor:default;">
+        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop');background-size:cover;background-position:center;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,14,26,0.9) 0%,rgba(10,14,26,0.2) 60%);"></div>
+        <div style="position:absolute;bottom:1rem;left:1rem;">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.25rem;">Metal & Makine</div>
+          <div style="color:#e5e7eb;font-weight:600;">Lazer & Nokta Vuruşlu</div>
+        </div>
+      </div>
+      <div class="fade-in" style="border-radius:12px;overflow:hidden;position:relative;height:200px;cursor:default;">
+        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop');background-size:cover;background-position:center;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,14,26,0.9) 0%,rgba(10,14,26,0.2) 60%);"></div>
+        <div style="position:absolute;bottom:1rem;left:1rem;">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.25rem;">Ambalaj & Gıda</div>
+          <div style="color:#e5e7eb;font-weight:600;">İnkjet Tarih Kodlama</div>
+        </div>
+      </div>
+      <div class="fade-in" style="border-radius:12px;overflow:hidden;position:relative;height:200px;cursor:default;">
+        <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1567789884554-0b844b597180?q=80&w=800&auto=format&fit=crop');background-size:cover;background-position:center;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,14,26,0.9) 0%,rgba(10,14,26,0.2) 60%);"></div>
+        <div style="position:absolute;bottom:1rem;left:1rem;">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.25rem;">Otomotiv</div>
+          <div style="color:#e5e7eb;font-weight:600;">Kalıcı Parça Markalama</div>
+        </div>
+      </div>
+      <div class="fade-in" style="border-radius:12px;overflow:hidden;position:relative;height:200px;cursor:default;">
+        <div style="position:absolute;inset:0;background-image:url('https://plus.unsplash.com/premium_photo-1716396588873-db76b49dfd36?q=80&w=800&auto=format&fit=crop');background-size:cover;background-position:center;transition:transform 0.4s ease;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'"></div>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,14,26,0.9) 0%,rgba(10,14,26,0.2) 60%);"></div>
+        <div style="position:absolute;bottom:1rem;left:1rem;">
+          <div style="color:var(--accent);font-size:0.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:0.25rem;">İnşaat & Plastik</div>
+          <div style="color:#e5e7eb;font-weight:600;">Boru & Profil Markalama</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
@@ -131,13 +175,13 @@
         <ul>
           <li><a href="tel:+905557038888"><i class="fas fa-phone" style="margin-right:0.4rem;color:var(--accent);"></i>0555 703 88 88</a></li>
           <li><a href="https://wa.me/905557038888" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:0.4rem;color:#25d366;"></i>WhatsApp</a></li>
-          <li style="color:var(--text-muted);font-size:0.85rem;padding-top:0.25rem;">Mehmet Ali Altundal</li>
+          <li style="color:var(--text-muted);font-size:0.85rem;padding-top:0.25rem;">Mehmet Ali <span style="color:var(--accent);">Altundal</span></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2024 360 SANAYİ. Tüm hakları saklıdır.</p>
-      <p>Mehmet Ali Altundal</p>
+      <p>Mehmet Ali <span style="color:var(--accent);">Altundal</span></p>
     </div>
   </div>
 </footer>

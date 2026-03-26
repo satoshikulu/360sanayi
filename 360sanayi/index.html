@@ -387,51 +387,118 @@
     <iframe id="modal-video-iframe" src="" allow="autoplay; encrypted-media" allowfullscreen title="Video"></iframe>
   </div>
 </div>
-<section id="hizmetler">
+<section id="hizmetler" class="svc-section">
   <div class="container">
-    <div class="fade-in">
-      <div class="section-label">Hizmetlerimiz</div>
+    <div class="fade-in" style="text-align:center;margin-bottom:3rem;">
+      <div class="section-label"><i class="fas fa-cogs"></i> &nbsp; Hizmetlerimiz</div>
       <h2 class="section-title">Sektöre Özel Endüstriyel Çözümler</h2>
-      <p class="section-desc">Robot kol boyama, lazer markalama, inkjet kodlama ve endüstriyel otomasyon alanlarında kapsamlı çözümler sunuyoruz.</p>
+      <p class="section-desc description">Robot kol boyama, lazer markalama, inkjet kodlama ve endüstriyel otomasyon alanlarında kapsamlı çözümler sunuyoruz.</p>
     </div>
-    <div class="services-grid">
-      <div class="service-card fade-in service-card--featured">
-        <div class="service-icon"><i class="fas fa-robot"></i></div>
-        <div class="service-badge-new">YENİ</div>
-        <h3>Robot Kol Boyama</h3>
-        <p>6 eksenli endüstriyel robot kollarla otomotiv, metal ve plastik yüzeylerde hassas, tekrarlanabilir boyama sistemleri.</p>
-        <a href="#robot-boyama" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+
+    <div class="svc-bento">
+
+      <!-- FEATURED: Robot Kol Boyama -->
+      <div class="svc-card svc-card--hero fade-in">
+        <div class="svc-bg" style="background-image:url('assets/lestarobotic.PNG');background-position:center top;"></div>
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <div class="svc-tag-row">
+            <span class="svc-icon-wrap"><i class="fas fa-robot"></i></span>
+            <span class="svc-badge">YENİ</span>
+          </div>
+          <h3>Robot Kol Boyama</h3>
+          <p class="description">6 eksenli robot kollarla otomotiv, metal ve plastik yüzeylerde hassas, tekrarlanabilir boyama. İnsan hatasını sıfıra indirin.</p>
+          <div class="svc-stats-row">
+            <div class="svc-stat"><span>±0.05mm</span>Hassasiyet</div>
+            <div class="svc-stat"><span>3x</span>Hız</div>
+            <div class="svc-stat"><span>%30</span>Tasarruf</div>
+          </div>
+          <a href="#robot-boyama" class="svc-link">Sistemi İncele <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-icon"><i class="fas fa-spray-can"></i></div>
-        <h3>Elektrostatik Boyama</h3>
-        <p>Elektrostatik yük teknolojisiyle %95 boya transferi verimliliği. Minimum atık, maksimum kaplama kalitesi.</p>
-        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+
+      <!-- Elektrostatik Boyama -->
+      <div class="svc-card fade-in">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1581092160607-ee22621dd758?q=80&w=800&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <span class="svc-icon-wrap"><i class="fas fa-spray-can"></i></span>
+          <h3>Elektrostatik Boyama</h3>
+          <p class="description">%95 boya transferi verimliliği. Minimum atık, maksimum kaplama kalitesi.</p>
+          <div class="svc-stats-row">
+            <div class="svc-stat"><span>%95</span>Transfer</div>
+            <div class="svc-stat"><span>IP65</span>Koruma</div>
+          </div>
+          <a href="hizmetler.html" class="svc-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-icon"><i class="fas fa-crosshairs"></i></div>
-        <h3>Lazer Markalama</h3>
-        <p>Metal, plastik ve çeşitli yüzeylerde kalıcı, yüksek hassasiyetli lazer markalama sistemleri.</p>
-        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+
+      <!-- Lazer Markalama -->
+      <div class="svc-card fade-in">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=800&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <span class="svc-icon-wrap"><i class="fas fa-crosshairs"></i></span>
+          <h3>Lazer Markalama</h3>
+          <p class="description">Metal, plastik ve kompozit yüzeylerde kalıcı, silinmez lazer markalama.</p>
+          <div class="svc-stats-row">
+            <div class="svc-stat"><span>7000mm/s</span>Hız</div>
+            <div class="svc-stat"><span>100W</span>Güç</div>
+          </div>
+          <a href="hizmetler.html" class="svc-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-icon"><i class="fas fa-print"></i></div>
-        <h3>İnkjet Kodlama</h3>
-        <p>Gıda, ambalaj ve üretim hatlarında hızlı ve güvenilir inkjet tarih/seri kodlama çözümleri.</p>
-        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+
+      <!-- İnkjet Kodlama -->
+      <div class="svc-card fade-in">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?q=80&w=800&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <span class="svc-icon-wrap"><i class="fas fa-print"></i></span>
+          <h3>İnkjet Kodlama</h3>
+          <p class="description">Gıda ve ambalaj hatlarında yüksek hızlı tarih, seri ve barkod kodlama.</p>
+          <div class="svc-stats-row">
+            <div class="svc-stat"><span>300m/dk</span>Hız</div>
+            <div class="svc-stat"><span>IP65</span>Koruma</div>
+          </div>
+          <a href="hizmetler.html" class="svc-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-icon"><i class="fas fa-industry"></i></div>
-        <h3>Endüstriyel Otomasyon</h3>
-        <p>Üretim hatlarına entegre otomasyon sistemleri ile verimlilik ve kalite artışı.</p>
-        <a href="hizmetler.html" class="service-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+
+      <!-- Endüstriyel Otomasyon -->
+      <div class="svc-card fade-in">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?q=80&w=800&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <span class="svc-icon-wrap"><i class="fas fa-industry"></i></span>
+          <h3>Endüstriyel Otomasyon</h3>
+          <p class="description">PLC/SCADA entegrasyonu, üretim hattı otomasyonu ve veri analizi çözümleri.</p>
+          <div class="svc-stats-row">
+            <div class="svc-stat"><span>24/7</span>Çalışma</div>
+            <div class="svc-stat"><span>ISO</span>Uyumlu</div>
+          </div>
+          <a href="hizmetler.html" class="svc-link">Detaylar <i class="fas fa-arrow-right"></i></a>
+        </div>
       </div>
-      <div class="service-card fade-in">
-        <div class="service-icon"><i class="fas fa-tools"></i></div>
-        <h3>Teknik Destek</h3>
-        <p>Kurulum, bakım ve teknik destek hizmetleri ile kesintisiz üretim süreci.</p>
-        <a href="iletisim.html" class="service-link">İletişim <i class="fas fa-arrow-right"></i></a>
+
+      <!-- Teknik Destek -->
+      <div class="svc-card svc-card--support fade-in">
+        <div class="svc-bg" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop');"></div>
+        <div class="svc-overlay"></div>
+        <div class="svc-content">
+          <span class="svc-icon-wrap svc-icon-wrap--lg"><i class="fas fa-headset"></i></span>
+          <h3>Teknik Destek</h3>
+          <p class="description">Kurulum, devreye alma, periyodik bakım ve 7/24 teknik destek. Kesintisiz üretim garantisi.</p>
+          <ul class="svc-support-list">
+            <li><i class="fas fa-check"></i> Uzaktan & yerinde destek</li>
+            <li><i class="fas fa-check"></i> Periyodik bakım planı</li>
+            <li><i class="fas fa-check"></i> Yedek parça temini</li>
+            <li><i class="fas fa-check"></i> Operatör eğitimi</li>
+          </ul>
+          <a href="iletisim.html" class="btn btn-primary" style="margin-top:1.25rem;display:inline-flex;font-size:0.85rem;padding:0.6rem 1.2rem;"><i class="fas fa-phone"></i> Destek Al</a>
+        </div>
       </div>
+
     </div>
   </div>
 </section>
@@ -624,7 +691,7 @@
         <ul>
           <li><a href="tel:+905557038888"><i class="fas fa-phone" style="margin-right:0.4rem;color:var(--accent);"></i>0555 703 88 88</a></li>
           <li><a href="https://wa.me/905557038888" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="margin-right:0.4rem;color:#25d366;"></i>WhatsApp</a></li>
-          <li style="color:var(--text-muted);font-size:0.85rem;padding-top:0.25rem;">Mehmet Ali Altundal</li>
+          <li style="color:var(--text-muted);font-size:0.85rem;padding-top:0.25rem;">Mehmet Ali <span style="color:var(--accent);">Altundal</span></li>
         </ul>
       </div>
     </div>

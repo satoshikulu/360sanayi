@@ -1996,3 +1996,217 @@ footer {
   color: var(--text-muted);
   line-height: 1.6;
 }
+
+/* ===== SERVICE CARD IMAGE ===== */
+.service-card-img {
+  transition: transform 0.4s ease;
+}
+.service-card:hover .service-card-img {
+  transform: scale(1.05);
+}
+
+/* ===== SERVICES BENTO GRID ===== */
+.svc-section { padding: 5rem 0; background: var(--dark); }
+
+.svc-bento {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.25rem;
+}
+
+/* Hero card spans 2 rows on the left */
+.svc-card--hero {
+  grid-row: span 2;
+}
+
+/* Base card */
+.svc-card {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+.svc-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+.svc-card--hero { min-height: 540px; }
+
+/* Background image layer */
+.svc-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+}
+.svc-card:hover .svc-bg { transform: scale(1.06); }
+
+/* Gradient overlay */
+.svc-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10,14,26,0.97) 0%,
+    rgba(10,14,26,0.65) 50%,
+    rgba(10,14,26,0.15) 100%
+  );
+}
+.svc-card--hero .svc-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10,14,26,1) 0%,
+    rgba(10,14,26,0.7) 45%,
+    rgba(10,14,26,0.1) 100%
+  );
+}
+
+/* Content */
+.svc-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.75rem;
+}
+.svc-card--hero .svc-content { padding: 2rem; }
+
+.svc-tag-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.svc-icon-wrap {
+  width: 42px; height: 42px;
+  background: rgba(249,115,22,0.18);
+  border: 1px solid rgba(249,115,22,0.35);
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: var(--accent);
+  margin-bottom: 0.9rem;
+  flex-shrink: 0;
+}
+.svc-icon-wrap--lg {
+  width: 56px; height: 56px;
+  font-size: 1.5rem;
+  margin-bottom: 1.1rem;
+}
+
+.svc-badge {
+  background: var(--accent);
+  color: #fff;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+}
+
+.svc-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+.svc-card--hero h3 { font-size: 1.5rem; margin-bottom: 0.65rem; }
+
+.svc-card p {
+  font-size: 0.875rem;
+  color: #9ca3af;
+  line-height: 1.65;
+  margin-bottom: 1rem;
+}
+
+/* Stat pills */
+.svc-stats-row {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.1rem;
+}
+.svc-stat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.3;
+}
+.svc-stat span {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-primary);
+}
+
+/* CTA link */
+.svc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  transition: gap 0.2s ease;
+}
+.svc-link:hover { gap: 0.7rem; }
+
+/* Support card — no bg image, dark gradient */
+.svc-card--support {
+  border-color: rgba(59,130,246,0.2);
+  justify-content: flex-start;
+}
+.svc-card--support:hover {
+  border-color: rgba(249,115,22,0.35);
+}
+
+.svc-support-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.svc-support-list li {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-secondary);
+}
+.svc-support-list li i {
+  color: var(--accent);
+  font-size: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .svc-bento {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .svc-card--hero { grid-row: span 1; min-height: 320px; }
+}
+@media (max-width: 580px) {
+  .svc-bento {
+    grid-template-columns: 1fr;
+  }
+  .svc-card--hero { min-height: 280px; }
+  .svc-card { min-height: 220px; }
+}
