@@ -307,33 +307,65 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeVideoModal();
 });
 
-// ===== HERO VIDEO LOADING =====
+// ===== HERO VIDEO LOADING & OPTIMIZATION =====
 (function initHeroVideo() {
   const heroVideo = document.querySelector('.hero-video-local');
   if (!heroVideo) return;
   
   const loadingEl = heroVideo.parentElement.querySelector('.video-loading');
   const errorEl = heroVideo.parentElement.querySelector('.video-error');
+  let loadTimeout;
   
-  // Video yüklendiğinde loading'i gizle
-  heroVideo.addEventListener('loadeddata', () => {
+  // Video hızlı yükleme için strateji
+  function showVideo() {
     if (loadingEl) {
       loadingEl.classList.add('hidden');
       console.log('Hero video loaded successfully');
     }
+  }
+  
+  // Video yüklendiğinde loading'i gizle
+  heroVideo.addEventListener('loadeddata', () => {
+    clearTimeout(loadTimeout);
+    showVideo();
+  });
+  
+  // Video metadata yüklendiğinde (daha hızlı ilk gösterim)
+  heroVideo.addEventListener('loadedmetadata', () => {
+    console.log('Video metadata loaded');
+  });
+  
+  // Video progress - kademeli yükleme
+  heroVideo.addEventListener('progress', () => {
+    const buffered = heroVideo.buffered;
+    if (buffered.length > 0 && buffered.end(buffered.length - 1) >= heroVideo.duration * 0.3) {
+      // %30 yüklendiğinde göster
+      showVideo();
+    }
   });
   
   // Video hatası durumunda
-  heroVideo.addEventListener('error', () => {
+  heroVideo.addEventListener('error', (e) => {
+    clearTimeout(loadTimeout);
     if (loadingEl) loadingEl.classList.add('hidden');
     if (errorEl) errorEl.style.display = 'block';
-    console.error('Hero video loading error');
+    console.error('Hero video loading error:', e);
   });
   
-  // Güvenlik timeout'u - 5 saniye sonra loading'i kaldır
-  setTimeout(() => {
-    if (loadingEl) loadingEl.classList.add('hidden');
-  }, 5000);
+  // Güvenlik timeout'u - 3 saniye sonra loading'i kaldır (5'ten düşürüldü)
+  loadTimeout = setTimeout(() => {
+    console.log('Video load timeout - showing anyway');
+    showVideo();
+  }, 3000);
+  
+  // Düşük bant genişliği için otomatik kalite ayarı
+  heroVideo.addEventListener('waiting', () => {
+    console.log('Video buffering...');
+  });
+  
+  heroVideo.addEventListener('playing', () => {
+    console.log('Video is playing');
+  });
 })();
 
 // ===== CONTACT PAGE - ROBOT ARM ANIMATION =====

@@ -686,6 +686,7 @@ footer {
   overflow: hidden;
   flex-shrink: 0;
   z-index: 1;
+  background: var(--dark); /* Video yüklenene kadar koyu arka plan */
 }
 .hero-video-local {
   width: 100%;
@@ -693,6 +694,7 @@ footer {
   object-fit: contain;
   object-position: center;
   display: block;
+  will-change: opacity; /* Performans optimizasyonu */
 }
 .hero-video-fade {
   position: absolute;
