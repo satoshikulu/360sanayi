@@ -315,13 +315,25 @@ document.addEventListener('keydown', e => {
   const loadingEl = heroVideo.parentElement.querySelector('.video-loading');
   const errorEl = heroVideo.parentElement.querySelector('.video-error');
   let loadTimeout;
+  let isLoaded = false;
   
   // Video hızlı yükleme için strateji
   function showVideo() {
+    if (isLoaded) return;
+    isLoaded = true;
+    
     if (loadingEl) {
       loadingEl.classList.add('hidden');
       console.log('Hero video loaded successfully');
     }
+    
+    // Video elementine loaded class ekle (CSS opacity transition için)
+    heroVideo.classList.add('loaded');
+    
+    // Video'nun 0:00'dan başladığını garanti et
+    heroVideo.currentTime = 0;
+    
+    console.log('Video shown from position:', heroVideo.currentTime);
   }
   
   // Video yüklendiğinde loading'i gizle
@@ -332,16 +344,26 @@ document.addEventListener('keydown', e => {
   
   // Video metadata yüklendiğinde (daha hızlı ilk gösterim)
   heroVideo.addEventListener('loadedmetadata', () => {
-    console.log('Video metadata loaded');
+    console.log('Video metadata loaded, duration:', heroVideo.duration);
+    // İlk frame'i göster
+    if (heroVideo.readyState >= 1) {
+      showVideo();
+    }
   });
   
   // Video progress - kademeli yükleme
   heroVideo.addEventListener('progress', () => {
     const buffered = heroVideo.buffered;
-    if (buffered.length > 0 && buffered.end(buffered.length - 1) >= heroVideo.duration * 0.3) {
-      // %30 yüklendiğinde göster
+    if (buffered.length > 0 && buffered.end(buffered.length - 1) >= Math.min(2, heroVideo.duration)) {
+      // En az 2 saniye yüklendiğinde göster
       showVideo();
     }
+  });
+  
+  // Video canplaythrough - yeterli veri yüklendi
+  heroVideo.addEventListener('canplaythrough', () => {
+    console.log('Video can play through');
+    showVideo();
   });
   
   // Video hatası durumunda
@@ -352,11 +374,11 @@ document.addEventListener('keydown', e => {
     console.error('Hero video loading error:', e);
   });
   
-  // Güvenlik timeout'u - 3 saniye sonra loading'i kaldır (5'ten düşürüldü)
+  // Güvenlik timeout'u - 2 saniye sonra loading'i kaldır (daha hızlı)
   loadTimeout = setTimeout(() => {
     console.log('Video load timeout - showing anyway');
     showVideo();
-  }, 3000);
+  }, 2000);
   
   // Düşük bant genişliği için otomatik kalite ayarı
   heroVideo.addEventListener('waiting', () => {
@@ -364,7 +386,14 @@ document.addEventListener('keydown', e => {
   });
   
   heroVideo.addEventListener('playing', () => {
-    console.log('Video is playing');
+    console.log('Video is playing from:', heroVideo.currentTime);
+  });
+  
+  // Video tekrar başladığında 0'dan başla
+  heroVideo.addEventListener('seeked', () => {
+    if (Math.abs(heroVideo.currentTime) < 0.5) {
+      heroVideo.currentTime = 0;
+    }
   });
 })();
 

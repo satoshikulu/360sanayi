@@ -695,6 +695,11 @@ footer {
   object-position: center;
   display: block;
   will-change: opacity; /* Performans optimizasyonu */
+  opacity: 0; /* Başlangıçta gizli, loading bitince görünür olacak */
+  transition: opacity 0.3s ease;
+}
+.hero-video-local.loaded {
+  opacity: 1;
 }
 .hero-video-fade {
   position: absolute;
