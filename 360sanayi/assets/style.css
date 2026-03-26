@@ -2210,3 +2210,78 @@ footer {
   .svc-card--hero { min-height: 280px; }
   .svc-card { min-height: 220px; }
 }
+
+/* ===== MOBİL UYUMLULUK DÜZELTMELERİ ===== */
+
+/* --- Genel section padding --- */
+@media (max-width: 768px) {
+  section { padding: 3.5rem 1rem; }
+  .container { padding: 0 1rem; }
+  .stats-section { padding: 2.5rem 1rem; }
+
+  /* Hero badge uzun metni sar */
+  .hero-badge { font-size: 0.68rem; letter-spacing: 1px; padding: 0.35rem 0.75rem; white-space: normal; text-align: center; }
+
+  /* Hero butonları dikey */
+  .hero-actions { flex-direction: column; align-items: center; gap: 0.6rem; }
+  .btn { width: 100%; max-width: 280px; justify-content: center; padding: 0.75rem 1.25rem; font-size: 0.88rem; }
+
+  /* Robot diagram wrap */
+  .robot-diagram-wrap { padding: 1.25rem; }
+  .robot-diagram { gap: 1.5rem; }
+
+  /* Robot features grid — 2 kolon */
+  .robot-features-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .robot-feature-card { padding: 1.25rem; }
+
+  /* Svc bento — tek kolon */
+  .svc-bento { grid-template-columns: 1fr; gap: 1rem; }
+  .svc-card--hero { grid-row: span 1; min-height: 300px; }
+  .svc-card { min-height: 220px; }
+  .svc-content { padding: 1.25rem; }
+  .svc-card--hero .svc-content { padding: 1.5rem; }
+  .svc-card--hero h3 { font-size: 1.2rem; }
+  .svc-stats-row { gap: 0.4rem; }
+  .svc-stat { padding: 0.3rem 0.55rem; font-size: 0.7rem; }
+  .svc-stat span { font-size: 0.85rem; }
+
+  /* Section başlıkları */
+  .section-title { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .section-desc { font-size: 0.9rem; }
+
+  /* About grid */
+  .about-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .about-visual { text-align: center; }
+
+  /* Contact grid */
+  .contact-grid { grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .footer-bottom { flex-direction: column; text-align: center; gap: 0.4rem; }
+
+  /* Page hero (hizmetler/projeler) */
+  .page-hero { padding: 6rem 1.25rem 2.5rem; }
+  .page-hero h1 { font-size: clamp(1.4rem, 5vw, 2rem); }
+  .page-hero p { font-size: 0.9rem; }
+
+  /* Stats grid 2 kolon */
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+  .stat-number { font-size: 2rem; }
+
+  /* Projects grid */
+  .projects-grid { grid-template-columns: 1fr; }
+
+  /* Services grid (hizmetler.html) */
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .service-card { padding: 1.25rem; }
+  .service-card-img { height: 130px !important; margin: -1.25rem -1.25rem 1rem !important; }
+}
+
+/* --- Küçük telefon (max 400px) --- */
+@media (max-width: 400px) {
+  .hero-badge { font-size: 0.62rem; }
+  .robot-features-grid { grid-template-columns: 1fr; }
+  .svc-card { min-height: 200px; }
+  .stat-number { font-size: 1.75rem; }
+}
