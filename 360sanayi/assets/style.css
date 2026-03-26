@@ -126,12 +126,9 @@ img { max-width: 100%; height: auto; display: block; }
   fill: none;
   stroke: url(#logoGradient);
   stroke-width: 3;
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
   opacity: 0;
   animation: 
-    circleDraw 1.2s ease-out 0.1s forwards,
-    circleGlow 2s ease-in-out 0.5s infinite alternate;
+    circleDraw 1.2s ease-out 0.1s forwards;
 }
 
 @keyframes logoTextIn {
@@ -140,9 +137,13 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 @keyframes circleDraw {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
   to {
-    stroke-dashoffset: 0;
     opacity: 1;
+    transform: scale(1);
   }
 }
 
