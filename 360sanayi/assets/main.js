@@ -351,15 +351,6 @@ document.addEventListener('keydown', e => {
     }
   });
   
-  // Video progress - kademeli yükleme
-  heroVideo.addEventListener('progress', () => {
-    const buffered = heroVideo.buffered;
-    if (buffered.length > 0 && buffered.end(buffered.length - 1) >= Math.min(2, heroVideo.duration)) {
-      // En az 2 saniye yüklendiğinde göster
-      showVideo();
-    }
-  });
-  
   // Video canplaythrough - yeterli veri yüklendi
   heroVideo.addEventListener('canplaythrough', () => {
     console.log('Video can play through');
@@ -374,27 +365,11 @@ document.addEventListener('keydown', e => {
     console.error('Hero video loading error:', e);
   });
   
-  // Güvenlik timeout'u - 2 saniye sonra loading'i kaldır (daha hızlı)
+  // Güvenlik timeout'u - 2 saniye sonra loading'i kaldır
   loadTimeout = setTimeout(() => {
     console.log('Video load timeout - showing anyway');
     showVideo();
   }, 2000);
-  
-  // Düşük bant genişliği için otomatik kalite ayarı
-  heroVideo.addEventListener('waiting', () => {
-    console.log('Video buffering...');
-  });
-  
-  heroVideo.addEventListener('playing', () => {
-    console.log('Video is playing from:', heroVideo.currentTime);
-  });
-  
-  // Video tekrar başladığında 0'dan başla
-  heroVideo.addEventListener('seeked', () => {
-    if (Math.abs(heroVideo.currentTime) < 0.5) {
-      heroVideo.currentTime = 0;
-    }
-  });
 })();
 
 // ===== CONTACT PAGE - ROBOT ARM ANIMATION =====
