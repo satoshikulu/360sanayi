@@ -1,35 +1,65 @@
 // ===== 360 SANAYİ - Main JS =====
 
-// Splash screen – logo video otomatik oynar, 2s sonra kapat (showcase videosunun başını engellememesi için)
+// ===== SPLASH SCREEN - HYBRID APPROACH =====
+// SVG logo hemen görünür, video arka planda yüklenir
 window.addEventListener('load', () => {
   const splash = document.getElementById('splash');
   const splashVideo = document.getElementById('splash-video');
+  const splashSvgLogo = document.querySelector('.splash-svg-logo');
+  
   if (!splash) return;
 
+  let isSplashHidden = false;
+
   function hideSplash() { 
-    splash.classList.add('hidden'); 
+    if (isSplashHidden) return;
+    isSplashHidden = true;
+    splash.classList.add('hidden');
   }
 
-  // Loading indicator'ı hemen gizle, video zaten yüklenmiş
-  const splashLoading = splash.querySelector('.video-loading');
-  if (splashLoading) {
-    splashLoading.style.display = 'none';
-  }
-
+  // Video yükleme durumu kontrolü
   if (splashVideo) {
-    splashVideo.addEventListener('ended', hideSplash);
-    // Video oynanmaya başladığında da loading'i kaldır
+    // Video hazır olduğunda (metadata yüklendi)
+    splashVideo.addEventListener('loadedmetadata', () => {
+      splashVideo.classList.add('ready');
+      
+      // SVG logoyu yavaşça gizle, videoyu göster
+      if (splashSvgLogo) {
+        splashSvgLogo.style.opacity = '0';
+        splashSvgLogo.style.transition = 'opacity 0.4s ease';
+      }
+      
+      // Kısa bir gecikme ile splash'i tamamen kapat
+      // (video başladıktan sonra 0.8-1.2 saniye ideal)
+      setTimeout(hideSplash, 1000);
+    });
+    
+    // Video oynanmaya başladığında
     splashVideo.addEventListener('play', () => {
-      if (splashLoading) splashLoading.style.display = 'none';
+      console.log('Splash video playing...');
     });
-    splashVideo.addEventListener('error', () => {
-      // Hata durumunda fallback göster
+    
+    // Video bittiğinde
+    splashVideo.addEventListener('ended', hideSplash);
+    
+    // Video hatası durumunda - SVG ile devam et
+    splashVideo.addEventListener('error', (e) => {
+      console.warn('Splash video load error, using SVG only:', e);
+      if (splashSvgLogo) {
+        splashSvgLogo.style.opacity = '1';
+      }
+      // Video yoksa sadece SVG göster, 1.5 saniye sonra kapat
+      setTimeout(hideSplash, 1500);
+    });
+    
+    // Güvenlik timeout'u - maksimum 2.5 saniye göster
+    setTimeout(() => {
       hideSplash();
-    });
-    // Güvenlik: 2 saniye sonra kapat
-    setTimeout(hideSplash, 2000);
+    }, 2500);
+    
   } else {
-    setTimeout(hideSplash, 1600);
+    // Video elementi yoksa sadece SVG göster
+    setTimeout(hideSplash, 1500);
   }
 });
 
@@ -39,19 +69,36 @@ window.addEventListener('scroll', () => {
   if (header) header.classList.toggle('scrolled', window.scrollY > 50);
 });
 
-// Hamburger menu
+// Hamburger menu - only active on mobile
 const hamburger = document.querySelector('.hamburger');
 const mobileNav = document.querySelector('.mobile-nav');
 if (hamburger && mobileNav) {
+  // Check if we're on mobile (screen width <= 900px)
+  function isMobile() {
+    return window.innerWidth <= 900;
+  }
+  
   hamburger.addEventListener('click', () => {
+    // Only allow toggle on mobile devices
+    if (!isMobile()) return;
+    
     hamburger.classList.toggle('active');
     mobileNav.classList.toggle('open');
   });
+  
   mobileNav.querySelectorAll('a').forEach(a => {
     a.addEventListener('click', () => {
       hamburger.classList.remove('active');
       mobileNav.classList.remove('open');
     });
+  });
+  
+  // Close menu on resize if switching to desktop
+  window.addEventListener('resize', () => {
+    if (!isMobile() && mobileNav.classList.contains('open')) {
+      hamburger.classList.remove('active');
+      mobileNav.classList.remove('open');
+    }
   });
 }
 
@@ -270,19 +317,41 @@ document.addEventListener('keydown', e => {
   
   // Video yüklendiğinde loading'i gizle
   heroVideo.addEventListener('loadeddata', () => {
-    if (loadingEl) loadingEl.classList.add('hidden');
+    if (loadingEl) {
+      loadingEl.classList.add('hidden');
+      console.log('Hero video loaded successfully');
+    }
   });
   
   // Video hatası durumunda
   heroVideo.addEventListener('error', () => {
     if (loadingEl) loadingEl.classList.add('hidden');
     if (errorEl) errorEl.style.display = 'block';
+    console.error('Hero video loading error');
   });
   
   // Güvenlik timeout'u - 5 saniye sonra loading'i kaldır
   setTimeout(() => {
     if (loadingEl) loadingEl.classList.add('hidden');
   }, 5000);
+})();
+
+// ===== CONTACT PAGE - ROBOT ARM ANIMATION =====
+(function initContactPageAnimations() {
+  const robotArmDecoration = document.querySelector('.robot-arm-decoration');
+  if (!robotArmDecoration) return;
+  
+  // Intersection Observer ile görünür olunca animasyonu başlat
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        robotArmDecoration.classList.add('animate');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  
+  observer.observe(robotArmDecoration);
 })();
 
 

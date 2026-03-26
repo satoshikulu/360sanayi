@@ -34,75 +34,257 @@
   </ul>
 </div>
 
-<div class="page-hero">
+<div class="page-hero page-hero-contact">
+  <div class="hero-pattern-overlay"></div>
+  <div class="robot-arm-decoration">
+    <svg viewBox="0 0 800 400" class="robot-arm-svg" aria-hidden="true">
+      <defs>
+        <linearGradient id="armGradient1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#f97316;stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+        </linearGradient>
+        <linearGradient id="armGradient2" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3" />
+          <stop offset="100%" style="stop-color:#f97316;stop-opacity:0.3" />
+        </linearGradient>
+      </defs>
+      <!-- Robot Arm Segments -->
+      <g class="robot-arm-group">
+        <path class="robot-arm-segment robot-arm-base" d="M 100 350 L 100 280 L 180 280 L 180 350 Z" fill="url(#armGradient1)" stroke="#f97316" stroke-width="2"/>
+        <circle class="robot-joint robot-joint-1" cx="140" cy="280" r="25" fill="none" stroke="#f97316" stroke-width="3"/>
+        <line class="robot-arm-segment robot-arm-lower" x1="140" y1="280" x2="280" y2="180" stroke="url(#armGradient1)" stroke-width="12" stroke-linecap="round"/>
+        <circle class="robot-joint robot-joint-2" cx="280" cy="180" r="20" fill="none" stroke="#3b82f6" stroke-width="3"/>
+        <line class="robot-arm-segment robot-arm-upper" x1="280" y1="180" x2="420" y2="120" stroke="url(#armGradient2)" stroke-width="10" stroke-linecap="round"/>
+        <circle class="robot-joint robot-joint-3" cx="420" cy="120" r="18" fill="none" stroke="#3b82f6" stroke-width="3"/>
+        <line class="robot-arm-segment robot-arm-wrist" x1="420" y1="120" x2="540" y2="90" stroke="url(#armGradient1)" stroke-width="8" stroke-linecap="round"/>
+        <circle class="robot-joint robot-joint-4" cx="540" cy="90" r="15" fill="none" stroke="#f97316" stroke-width="3"/>
+        <path class="robot-arm-segment robot-arm-tool" d="M 540 90 L 620 80 L 620 60 L 540 70 Z" fill="url(#armGradient2)" stroke="#3b82f6" stroke-width="2"/>
+      </g>
+      <!-- Technical Grid Lines -->
+      <g class="tech-grid" stroke="rgba(249,115,22,0.1)" stroke-width="1">
+        <line x1="0" y1="100" x2="800" y2="100"/>
+        <line x1="0" y1="200" x2="800" y2="200"/>
+        <line x1="0" y1="300" x2="800" y2="300"/>
+        <line x1="200" y1="0" x2="200" y2="400"/>
+        <line x1="400" y1="0" x2="400" y2="400"/>
+        <line x1="600" y1="0" x2="600" y2="400"/>
+      </g>
+    </svg>
+  </div>
   <div class="section-label">İletişim</div>
-  <h1>Bizimle İletişime Geçin</h1>
-  <p>Projeleriniz için teklif almak veya bilgi edinmek için hemen ulaşın.</p>
+  <h1>Endüstriyel Çözümler İçin<br><span class="gradient-text">Uzman Ekibimizle</span> Yanınızdayız</h1>
+  <p>Robot boyama sistemleri, lazer markalama ve Endüstri 4.0 otomasyon çözümleri hakkında bilgi almak için iletişime geçin.</p>
+  <div class="hero-stats">
+    <div class="hero-stat-item">
+      <div class="hero-stat-icon"><i class="fas fa-project-diagram"></i></div>
+      <div class="hero-stat-value">500+</div>
+      <div class="hero-stat-label">Proje</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="hero-stat-icon"><i class="fas fa-users"></i></div>
+      <div class="hero-stat-value">200+</div>
+      <div class="hero-stat-label">Mutlu Müşteri</div>
+    </div>
+    <div class="hero-stat-item">
+      <div class="hero-stat-icon"><i class="fas fa-medal"></i></div>
+      <div class="hero-stat-value">15+</div>
+      <div class="hero-stat-label">Yıl Deneyim</div>
+    </div>
+  </div>
 </div>
 
-<section class="contact-section" style="background:var(--dark);">
+<section class="contact-section contact-section-industrial">
+  <!-- Background Pattern -->
+  <div class="industrial-bg-pattern"></div>
+  
   <div class="container">
-    <div class="contact-grid">
-      <div class="contact-card" style="background:linear-gradient(135deg,rgba(249,115,22,0.08),rgba(59,130,246,0.08));border-color:rgba(249,115,22,0.2); position: relative; overflow: hidden;">
-        <div style="position: absolute; inset: 0; background-image: none; --bg-url: url('https://images.unsplash.com/photo-1634403665481-74948d815f03?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; z-index: 0; opacity: 0.15;" data-bg="https://images.unsplash.com/photo-1634403665481-74948d815f03?q=80&w=387&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"></div>
-          <h3><i class="fas fa-address-card" style="color:var(--accent);margin-right:0.5rem;"></i> İletişim Bilgileri</h3>
-          <div class="contact-item">
-            <div class="contact-item-icon"><i class="fas fa-user-tie"></i></div>
-            <div>
-            <div class="contact-item-label">Yetkili Kişi</div>
-            <div class="contact-item-value">Mehmet Ali Altundal</div>
+    <!-- Info Cards - 3 Kolon -->
+    <div class="contact-info-grid">
+      <!-- Kart 1: İletişim Bilgileri -->
+      <div class="contact-info-card fade-in">
+        <div class="card-industrial-header">
+          <div class="industrial-icon-box">
+            <i class="fas fa-phone-volume"></i>
+          </div>
+          <h3>İletişim Bilgileri</h3>
+        </div>
+        <div class="card-industrial-body">
+          <div class="industrial-contact-row">
+            <div class="industrial-contact-icon"><i class="fas fa-user-tie"></i></div>
+            <div class="industrial-contact-info">
+              <div class="industrial-contact-label">Yetkili Kişi</div>
+              <div class="industrial-contact-value">Mehmet Ali Altundal</div>
+            </div>
+          </div>
+          <div class="industrial-contact-row">
+            <div class="industrial-contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <div class="industrial-contact-info">
+              <div class="industrial-contact-label">Telefon</div>
+              <div class="industrial-contact-value">
+                <a href="tel:+905557038888">0555 703 88 88</a>
+              </div>
+            </div>
+          </div>
+          <div class="industrial-contact-row">
+            <div class="industrial-contact-icon"><i class="fas fa-building"></i></div>
+            <div class="industrial-contact-info">
+              <div class="industrial-contact-label">Firma</div>
+              <div class="industrial-contact-value">360 SANAYİ</div>
+            </div>
+          </div>
+          <div class="industrial-contact-row">
+            <div class="industrial-contact-icon"><i class="fas fa-clock"></i></div>
+            <div class="industrial-contact-info">
+              <div class="industrial-contact-label">Çalışma Saatleri</div>
+              <div class="industrial-contact-value">Pzt–Cum: 08:00–18:00</div>
+            </div>
+          </div>
+          <div class="industrial-action-buttons">
+            <a href="tel:+905557038888" class="industrial-btn industrial-btn-primary">
+              <i class="fas fa-phone"></i> Hemen Ara
+            </a>
+            <a href="https://wa.me/905557038888?text=Merhaba%2C%20360%20SANAYİ%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="industrial-btn industrial-btn-whatsapp">
+              <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
           </div>
         </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
-          <div>
-            <div class="contact-item-label">Telefon</div>
-            <div class="contact-item-value"><a href="tel:+905557038888">0555 703 88 88</a></div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><i class="fas fa-building"></i></div>
-          <div>
-            <div class="contact-item-label">Firma Adı</div>
-            <div class="contact-item-value">360 SANAYİ</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><i class="fas fa-clock"></i></div>
-          <div>
-            <div class="contact-item-label">Çalışma Saatleri</div>
-            <div class="contact-item-value">Pzt–Cum: 08:00–18:00</div>
-          </div>
-        </div>
-        <a href="tel:+905557038888" class="phone-btn" style="margin-top:2rem;">
-          <i class="fas fa-phone"></i> Hemen Ara: 0555 703 88 88
-        </a>
-        <a href="https://wa.me/905557038888?text=Merhaba%2C%20360%20SANAYİ%20hakkında%20bilgi%20almak%20istiyorum." target="_blank" rel="noopener" class="whatsapp-btn">
-          <i class="fab fa-whatsapp"></i> WhatsApp ile Mesaj Gönder
-        </a>
       </div>
 
-      <div class="fade-in" style="display:flex;flex-direction:column;gap:1.5rem;">
-        <div class="contact-card">
-          <h3><i class="fas fa-cogs" style="color:var(--accent);margin-right:0.5rem;"></i> Hizmet Alanlarımız</h3>
-          <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:1rem;">
-            <div class="feature-item"><div class="feature-icon"><i class="fas fa-crosshairs"></i></div><div><h4>Lazer Markalama</h4><p>Metal, plastik, cam ve seramik yüzeyler</p></div></div>
-            <div class="feature-item"><div class="feature-icon"><i class="fas fa-print"></i></div><div><h4>İnkjet Kodlama</h4><p>Tarih, seri no, barkod ve QR kod</p></div></div>
-            <div class="feature-item"><div class="feature-icon"><i class="fas fa-mobile-alt"></i></div><div><h4>Mobil Sistemler</h4><p>Taşınabilir saha uygulamaları</p></div></div>
+      <!-- Kart 2: Hizmet Alanları -->
+      <div class="contact-info-card fade-in">
+        <div class="card-industrial-header">
+          <div class="industrial-icon-box">
+            <i class="fas fa-cogs"></i>
           </div>
+          <h3>Hizmet Alanlarımız</h3>
         </div>
-        
-        <div class="contact-card" style="background-image: none; --bg-url: url('https://images.unsplash.com/photo-1499159058454-75067059248a?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'); background-size: cover; background-position: center; border-color: rgba(249,115,22,0.2); position: relative; overflow: hidden;" data-bg="https://images.unsplash.com/photo-1499159058454-75067059248a?q=80&w=871&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D">
-          <div style="position: absolute; inset: 0; background: rgba(255,255,255,0.75); z-index: 1;"></div>
-          <div style="text-align:center;padding:1rem 0; position: relative; z-index: 2;">
-            <div style="font-size:2.5rem;margin-bottom:0.5rem;">
-              <h3 style="margin-bottom:0.25rem; color: var(--dark);">Hızlı Teklif Alın</h3>
-              <p style="color:#555;font-size:0.85rem;margin-bottom:0.75rem;">Projenizi anlatın, size özel çözüm sunalım.</p>
-              <a href="tel:+905557038888" style="color:var(--accent);font-size:1.3rem;font-weight:800;">0555 703 88 88</a>
-              <p style="color:#666;font-size:0.75rem;margin-top:0.25rem;">Mehmet Ali Altundal</p>
+        <div class="card-industrial-body">
+          <div class="industrial-service-list">
+            <div class="industrial-service-item">
+              <div class="industrial-service-icon"><i class="fas fa-robot"></i></div>
+              <div class="industrial-service-info">
+                <h4>Robot Boyama</h4>
+                <p>6 eksenli robotik sistemler</p>
+              </div>
+            </div>
+            <div class="industrial-service-item">
+              <div class="industrial-service-icon"><i class="fas fa-crosshairs"></i></div>
+              <div class="industrial-service-info">
+                <h4>Lazer Markalama</h4>
+                <p>Metal, plastik, cam yüzeyler</p>
+              </div>
+            </div>
+            <div class="industrial-service-item">
+              <div class="industrial-service-icon"><i class="fas fa-print"></i></div>
+              <div class="industrial-service-info">
+                <h4>İnkjet Kodlama</h4>
+                <p>Tarih, seri no, barkod</p>
+              </div>
+            </div>
+            <div class="industrial-service-item">
+              <div class="industrial-service-icon"><i class="fas fa-mobile-alt"></i></div>
+              <div class="industrial-service-info">
+                <h4>Mobil Sistemler</h4>
+                <p>Taşınabilir saha çözümleri</p>
+              </div>
+            </div>
+            <div class="industrial-service-item">
+              <div class="industrial-service-icon"><i class="fas fa-industry"></i></div>
+              <div class="industrial-service-info">
+                <h4>Otomasyon</h4>
+                <p>Endüstri 4.0 entegrasyonu</p>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Kart 3: Sektörler -->
+      <div class="contact-info-card fade-in">
+        <div class="card-industrial-header">
+          <div class="industrial-icon-box">
+            <i class="fas fa-sitemap"></i>
+          </div>
+          <h3>Sektör Çözümleri</h3>
+        </div>
+        <div class="card-industrial-body">
+          <div class="industrial-sector-grid">
+            <div class="industrial-sector-item">
+              <i class="fas fa-car"></i>
+              <span>Otomotiv</span>
+            </div>
+            <div class="industrial-sector-item">
+              <i class="fas fa-motorcycle"></i>
+              <span>Makine</span>
+            </div>
+            <div class="industrial-sector-item">
+              <i class="fas fa-box"></i>
+              <span>Ambalaj</span>
+            </div>
+            <div class="industrial-sector-item">
+              <i class="fas fa-utensils"></i>
+              <span>Gıda</span>
+            </div>
+            <div class="industrial-sector-item">
+              <i class="fas fa-home"></i>
+              <span>İnşaat</span>
+            </div>
+            <div class="industrial-sector-item">
+              <i class="fas fa-plane"></i>
+              <span>Savunma</span>
+            </div>
+          </div>
+          <div class="industrial-cta-box">
+            <div class="industrial-cta-title">
+              <i class="fas fa-file-contract"></i> Hızlı Teklif
+            </div>
+            <p class="industrial-cta-text">Projenizi anlatın, size özel çözüm sunalım.</p>
+            <a href="tel:+905557038888" class="industrial-cta-phone">
+              <i class="fas fa-phone"></i> 0555 703 88 88
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Divider with Animation -->
+    <div class="tech-divider">
+      <div class="tech-divider-line"></div>
+      <div class="tech-divider-icon">
+        <i class="fas fa-microchip"></i>
+      </div>
+      <div class="tech-divider-line"></div>
+    </div>
+
+    <!-- Contact Features -->
+    <div class="contact-features-grid">
+      <div class="contact-feature-card fade-in">
+        <div class="feature-card-icon">
+          <i class="fas fa-shipping-fast"></i>
+        </div>
+        <h4>Hızlı Yanıt</h4>
+        <p>En geç 24 saat içinde teknik ekibimiz dönüş yapar.</p>
+      </div>
+      <div class="contact-feature-card fade-in">
+        <div class="feature-card-icon">
+          <i class="fas fa-user-shield"></i>
+        </div>
+        <h4>Uzman Destek</h4>
+        <p>15 yıllık deneyimle profesyonel mühendislik desteği.</p>
+      </div>
+      <div class="contact-feature-card fade-in">
+        <div class="feature-card-icon">
+          <i class="fas fa-tools"></i>
+        </div>
+        <h4>Satış Sonrası</h4>
+        <p>Kurulum, eğitim ve teknik destek hizmetleri.</p>
+      </div>
+      <div class="contact-feature-card fade-in">
+        <div class="feature-card-icon">
+          <i class="fas fa-globe"></i>
+        </div>
+        <h4>Geniş Ağ</h4>
+        <p>Türkiye ve çevre ülkelerde güçlü distribütörlük.</p>
       </div>
     </div>
   </div>
@@ -136,7 +318,7 @@
     </div>
     <div class="footer-bottom">
       <p>&copy; 2024 360 SANAYİ. Tüm hakları saklıdır.</p>
-      <p>Mehmet Ali Altundal</p>
+      <p class="footer-name">Mehmet Ali <span>Altundal</span></p>
     </div>
   </div>
 </footer>
