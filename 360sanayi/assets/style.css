@@ -62,18 +62,106 @@ body {
 a { color: inherit; text-decoration: none; }
 img { max-width: 100%; height: auto; display: block; }
 
-/* ===== SPLASH SCREEN - HYBRID APPROACH ===== */
+/* ===== SPLASH SCREEN - INDUSTRIAL DESIGN ===== */
 #splash {
   position: fixed;
   inset: 0;
-  background: var(--dark);
+  background: linear-gradient(135deg, var(--dark) 0%, #0f172a 50%, var(--dark2) 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
   transition: opacity 0.5s ease, visibility 0.5s ease;
+  overflow: hidden;
 }
 #splash.hidden { opacity: 0; visibility: hidden; }
+
+/* Endüstriyel Çark Animasyonları */
+.industrial-gears {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  opacity: 0.15;
+}
+
+.gear {
+  position: absolute;
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  box-shadow: 
+    inset 0 0 20px rgba(249,115,22,0.3),
+    0 0 30px rgba(249,115,22,0.2);
+}
+
+.gear::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60%;
+  height: 60%;
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.gear::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4px;
+  height: 40%;
+  background: var(--accent);
+  transform: translate(-50%, -50%);
+  box-shadow: 
+    0 0 10px rgba(249,115,22,0.5),
+    0 20px 0 rgba(249,115,22,0.8),
+    0 -20px 0 rgba(249,115,22,0.8);
+}
+
+.gear-1 {
+  width: 120px;
+  height: 120px;
+  top: 10%;
+  left: 10%;
+  animation: rotateClockwise 8s linear infinite;
+}
+
+.gear-2 {
+  width: 80px;
+  height: 80px;
+  top: 15%;
+  right: 15%;
+  animation: rotateCounterClockwise 6s linear infinite;
+}
+
+.gear-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 20%;
+  left: 15%;
+  animation: rotateClockwise 10s linear infinite;
+}
+
+.gear-4 {
+  width: 100px;
+  height: 100px;
+  bottom: 25%;
+  right: 10%;
+  animation: rotateCounterClockwise 7s linear infinite;
+}
+
+@keyframes rotateClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  from { transform: rotate(360deg); }
+  to { transform: rotate(0deg); }
+}
 
 .splash-logo-container {
   position: relative;
@@ -105,7 +193,8 @@ img { max-width: 100%; height: auto; display: block; }
   fill: #e5e7eb;
   font-family: 'Goldman', sans-serif;
   opacity: 0;
-  animation: logoTextIn 0.6s ease-out 0.2s forwards;
+  animation: logoTextIn 0.8s ease-out 0.2s forwards;
+  text-shadow: 0 0 20px rgba(229,231,235,0.3);
 }
 
 .logo-text-accent {
@@ -114,12 +203,21 @@ img { max-width: 100%; height: auto; display: block; }
   fill: #f97316;
   font-family: 'Goldman', sans-serif;
   opacity: 0;
-  animation: logoTextIn 0.6s ease-out 0.3s forwards, accentPulse 2s ease-in-out 0.5s infinite alternate;
+  animation: logoTextIn 0.8s ease-out 0.3s forwards, industrialPulse 3s ease-in-out 0.5s infinite alternate;
+  text-shadow: 0 0 25px rgba(249,115,22,0.5);
 }
 
-@keyframes accentPulse {
-  from { fill: #f97316; filter: drop-shadow(0 0 5px rgba(249,115,22,0.5)); }
-  to { fill: #3b82f6; filter: drop-shadow(0 0 15px rgba(59,130,246,0.8)); }
+@keyframes industrialPulse {
+  from { 
+    fill: #f97316; 
+    filter: drop-shadow(0 0 15px rgba(249,115,22,0.6)) brightness(1);
+    transform: scale(1);
+  }
+  to { 
+    fill: #3b82f6; 
+    filter: drop-shadow(0 0 30px rgba(59,130,246,0.8)) brightness(1.2);
+    transform: scale(1.02);
+  }
 }
 
 .logo-circle {
@@ -157,9 +255,25 @@ img { max-width: 100%; height: auto; display: block; }
   color: var(--text-muted);
   font-size: 0.9rem;
   font-family: var(--font-secondary);
-  letter-spacing: 1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
   opacity: 0;
-  animation: fadeInOut 1.5s ease-in-out 0.5s infinite;
+  animation: industrialLoading 2s ease-in-out 0.5s infinite;
+  text-shadow: 0 0 10px rgba(156,163,175,0.3);
+}
+
+@keyframes industrialLoading {
+  0%, 100% { 
+    opacity: 0.4; 
+    transform: translateY(0);
+    color: var(--text-muted);
+  }
+  50% { 
+    opacity: 1; 
+    transform: translateY(-2px);
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(249,115,22,0.5);
+  }
 }
 
 @keyframes fadeInOut {
