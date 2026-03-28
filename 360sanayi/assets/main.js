@@ -317,7 +317,18 @@ document.addEventListener('keydown', e => {
   let loadTimeout;
   let isLoaded = false;
   
-  // Video hızlı yükleme için strateji
+  // Videoyu başlat - splashscreen kapanınca çalışır
+  function startVideoLoading() {
+    // Hızlı başlatma için timeout - splashscreen kapandıktan 1s sonra
+    loadTimeout = setTimeout(() => {
+      if (!isLoaded) {
+        console.log('Force showing video after splash ended');
+        showVideo();
+      }
+    }, 1000);
+  }
+  
+  // Video gösterme fonksiyonu
   function showVideo() {
     if (isLoaded) return;
     isLoaded = true;
@@ -365,11 +376,33 @@ document.addEventListener('keydown', e => {
     console.error('Hero video loading error:', e);
   });
   
-  // Güvenlik timeout'u - 2 saniye sonra loading'i kaldır
-  loadTimeout = setTimeout(() => {
-    console.log('Video load timeout - showing anyway');
-    showVideo();
-  }, 2000);
+  // Splashscreen'in kapanmasını bekle
+  function waitForSplashThenStartVideo() {
+    const splash = document.getElementById('splash');
+    
+    if (splash && !splash.classList.contains('hidden')) {
+      // Splashscreen hala görünüyorsa, kapanışını bekle
+      const observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName === 'class') {
+            if (splash.classList.contains('hidden')) {
+              observer.disconnect();
+              // Splash kapandıktan sonra video yükleme başlat
+              setTimeout(startVideoLoading, 300);
+            }
+          }
+        });
+      });
+      
+      observer.observe(splash, { attributes: true });
+    } else {
+      // Splashscreen zaten kapalıysa hemen başlat
+      startVideoLoading();
+    }
+  }
+  
+  // Sayfa yüklendiğinde splashscreen'i bekle
+  waitForSplashThenStartVideo();
 })();
 
 // ===== CONTACT PAGE - ROBOT ARM ANIMATION =====
