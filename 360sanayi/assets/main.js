@@ -52,10 +52,10 @@ window.addEventListener('load', () => {
       setTimeout(hideSplash, 1500);
     });
     
-    // Güvenlik timeout'u - maksimum 2.5 saniye göster
+    // Güvenlik timeout'u - maksimum 1.5 saniye göster
     setTimeout(() => {
       hideSplash();
-    }, 2500);
+    }, 1500);
     
   } else {
     // Video elementi yoksa sadece SVG göster
@@ -319,13 +319,13 @@ document.addEventListener('keydown', e => {
   
   // Videoyu başlat - splashscreen kapanınca çalışır
   function startVideoLoading() {
-    // Hızlı başlatma için timeout - splashscreen kapandıktan 1s sonra
+    // Hızlı başlatma için timeout - splashscreen kapandıktan 0.5s sonra
     loadTimeout = setTimeout(() => {
       if (!isLoaded) {
         console.log('Force showing video after splash ended');
         showVideo();
       }
-    }, 1000);
+    }, 500);
   }
   
   // Video gösterme fonksiyonu
@@ -388,7 +388,7 @@ document.addEventListener('keydown', e => {
             if (splash.classList.contains('hidden')) {
               observer.disconnect();
               // Splash kapandıktan sonra video yükleme başlat
-              setTimeout(startVideoLoading, 300);
+              setTimeout(startVideoLoading, 100);
             }
           }
         });

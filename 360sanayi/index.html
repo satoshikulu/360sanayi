@@ -66,9 +66,6 @@
   
   <link rel="stylesheet" href="assets/style.css" media="print" onload="this.media='all'">
   
-  <!-- Preload Critical Assets -->
-  <link rel="preload" href="assets/videoshowcase.webm" as="video" type="video/webm">
-  
   <!-- Optimized JavaScript -->
   <script defer src="assets/main.js"></script>
 <div id="splash">
@@ -90,7 +87,7 @@
     </div>
     
     <!-- Video arka planda hazırlanır -->
-    <video autoplay muted playsinline id="splash-video" preload="auto" aria-label="360 SANAYİ Logo Animasyonu">
+    <video autoplay muted playsinline id="splash-video" preload="metadata" aria-label="360 SANAYİ Logo Animasyonu">
       <source src="assets/logo-animation.mp4" type="video/mp4">
     </video>
   </div>
@@ -135,7 +132,7 @@
       <div class="spinner"></div>
       <p>Video yükleniyor...</p>
     </div>
-    <video class="hero-video-local" autoplay muted loop playsinline aria-hidden="true" preload="metadata">
+    <video class="hero-video-local" autoplay muted loop playsinline aria-hidden="true" preload="metadata" poster="assets/video-poster.jpg">
       <!-- WebM formatı öncelikli (modern tarayıcılar için optimize) -->
       <source src="assets/videoshowcase.webm" type="video/webm">
       <source src="assets/videoshowcase.mp4" type="video/mp4">
